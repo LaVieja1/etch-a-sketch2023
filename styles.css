@@ -15,8 +15,14 @@ body {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    background-color: rgb(211, 234, 255);
+}
+
+h1 {
+    color: red;
+    text-decoration: underline;
 }
 
 header {
@@ -54,10 +60,48 @@ footer {
 }
 
 button {
-    padding: 12px;
+    padding: 8px 12px;
+    border: 2px solid black;
+    font-size: 16px;
+}
+
+.black {
+    background-color: black;
+    color: white;
+}
+
+.white {
+    background-color: white;
+    color: black;
+}
+
+.rainbow {
+    background-color: yellow;
+    color: black;
+}
+
+.reset {
+    background-color: orange;
+    color: white;
+}
+
+.elegir {
+    background-color: red;
+    color: white;
 }
 
 input {
     height: 40px;
     width: 40px;
+    border: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:visited {
+    text-decoration: none;
+    color: black;
 }

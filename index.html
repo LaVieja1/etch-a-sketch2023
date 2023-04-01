@@ -12,18 +12,19 @@
     <h1>Etch-A-Sketch</h1>
     <header>
         <h3>Selecionar tamaño</h3>
-        <button id="popup">Elegir</button>
+        <button id="popup" class="elegir">Elegir</button>
     </header>
     <p id="mensaje"></p>
     <div id="grid-container">
 
     </div>
     <footer>
-        <button onclick="setColor('black')">Negro</button>
-        <button onclick="setColor('white')">Blanco</button>
+        <button onclick="setColor('black')" class="black">Negro</button>
+        <button onclick="setColor('white')" class="white">Blanco</button>
         <input id="colorPicker" type="color" value="#333333">
-        <button onclick="setColor('random')">Arcoíris</button>
-        <button onclick="resetGrid()">Resetear</button>
+        <button onclick="setColor('random')" class="rainbow">Arcoíris</button>
+        <button onclick="resetGrid()" class="reset">Resetear</button>
     </footer>
+    <h3><a href="https://github.com/LaVieja1">Santiago Cano 2023</a></h3>
 </body>
 </html>
