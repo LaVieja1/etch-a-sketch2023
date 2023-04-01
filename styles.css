@@ -105,3 +105,11 @@ a:visited {
     text-decoration: none;
     color: black;
 }
+
+#sizeSlider {
+    width: 250px;
+}
+
+#sizeValue {
+    font-size: 20px;
+}

@@ -2,6 +2,8 @@ const gridContainer = document.getElementById('grid-container');
 const mensaje = document.getElementById('mensaje');
 const sizeBtn = document.getElementById('popup');
 const colorPicker = document.getElementById('colorPicker');
+const sizeValue = document.getElementById('sizeValue')
+const sizeSlider = document.getElementById('sizeSlider')
 
 let color = "black";
 
@@ -15,10 +17,13 @@ sizeBtn.addEventListener('click', function() {
     createGrid(size);
 })
 
+sizeSlider.onmousemove = (e) => updateSizeValue(e.target.value)
+sizeSlider.onchange = (e) => createGrid(e.target.value)
 colorPicker.oninput = (e) => setColor(e.target.value);
 
 function createGrid(size) {
 
+    gridContainer.innerHTML = '';
     gridContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     gridContainer.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 
@@ -72,6 +77,10 @@ function setColor(colorChoice) {
 function resetGrid() {
     let divs = document.querySelectorAll('div');
     divs.forEach((div) => div.style.backgroundColor = 'white');
+}
+
+function updateSizeValue(value) {
+    sizeValue.textContent = `${value} x ${value}`
 }
 
 createGrid(16);
