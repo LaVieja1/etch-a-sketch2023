@@ -2,6 +2,8 @@ const gridContainer = document.getElementById('grid-container');
 const mensaje = document.getElementById('mensaje');
 const sizeBtn = document.getElementById('popup');
 
+let color = "black";
+
 let mouseDown = false
 document.body.onmousedown = () => (mouseDown = true)
 document.body.onmouseup = () => (mouseDown = false)
@@ -44,9 +46,27 @@ function getSize() {
 }
 
 function changeColor(e) {
-    if (e.type === "mouseover" && !mouseDown) {
-        return
-    } else {
-        e.target.style.backgroundColor = "black";
+    if (e.type === "mouseover" && !mouseDown) return;
+
+    if (color == "black") {
+        this.style.backgroundColor = 'black';
+    } else if (color == "white") {
+        this.style.backgroundColor = 'white';
+    } else if (color == 'random') {
+        const randomR = Math.floor(Math.random() * 256)
+        const randomG = Math.floor(Math.random() * 256)
+        const randomB = Math.floor(Math.random() * 256)
+        e.target.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`
     }
 }
+
+function setColor(colorChoice) {
+    color = colorChoice;
+}
+
+function resetGrid() {
+    let divs = document.querySelectorAll('div');
+    divs.forEach((div) => div.style.backgroundColor = 'white');
+}
+
+createGrid(16);
