@@ -13,16 +13,41 @@ body {
     margin: 0;
     padding: 16px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: space-between;
     align-items: center;
 }
 
-#container {
+header {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
+    gap: 32px;
+}
+
+#grid-container {
     background-color: rgb(168, 158, 158);
-    height: 50vh;
-    width: 50vh;
+    border: 1px solid black;
+    width: 500px;
+    height: 500px;
+    display: grid;
+}
+
+.square-div {
+    background-color: white;
+    border: 1px solid black;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+}
+
+button {
+    padding: 12px;
 }
