@@ -1,6 +1,7 @@
 const gridContainer = document.getElementById('grid-container');
 const mensaje = document.getElementById('mensaje');
 const sizeBtn = document.getElementById('popup');
+const colorPicker = document.getElementById('colorPicker');
 
 let color = "black";
 
@@ -13,6 +14,8 @@ sizeBtn.addEventListener('click', function() {
     let size = getSize();
     createGrid(size);
 })
+
+colorPicker.oninput = (e) => setColor(e.target.value);
 
 function createGrid(size) {
 
@@ -57,6 +60,8 @@ function changeColor(e) {
         const randomG = Math.floor(Math.random() * 256)
         const randomB = Math.floor(Math.random() * 256)
         e.target.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`
+    } else {
+        this.style.backgroundColor = color;
     }
 }
 
