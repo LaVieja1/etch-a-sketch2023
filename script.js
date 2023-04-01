@@ -5,6 +5,8 @@ const sizeBtn = document.getElementById('popup');
 const colorPicker = document.getElementById('colorPicker');
 const sizeValue = document.getElementById('sizeValue')
 const sizeSlider = document.getElementById('sizeSlider')
+const bordeSi = document.querySelector('.borde-si');
+const bordeNo = document.querySelector('borde-no');
 
 let color = "black";
 
@@ -24,6 +26,7 @@ sizeBtn.addEventListener('click', function() {
 sizeSlider.onmousemove = (e) => updateSizeValue(e.target.value)
 sizeSlider.onchange = (e) => createGrid(e.target.value)
 colorPicker.oninput = (e) => setColor(e.target.value);
+
 
 //Funciones
 
@@ -93,6 +96,23 @@ function resetGrid() {
 //Cambia el texto del slider
 function updateSizeValue(value) {
     sizeValue.textContent = `${value} x ${value}`
+}
+
+function activarBordes() {
+    let squareBorder = document.querySelectorAll('.square-div');
+
+    for (let i = 0; i < squareBorder.length; i++) {
+        squareBorder[i].style.border = "1px solid black"
+    }
+
+}
+
+function desactivarBordes() {
+    let squareBorder = document.querySelectorAll('.square-div');
+
+    for (let i = 0; i < squareBorder.length; i++) {
+        squareBorder[i].style.border = "0"
+    }
 }
 
 //Inicia la pagina con esta grilla
