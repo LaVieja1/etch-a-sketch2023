@@ -1,4 +1,11 @@
 const gridContainer = document.getElementById('grid-container');
+const mensaje = document.getElementById('mensaje');
+const sizeBtn = document.getElementById('popup');
+
+sizeBtn.addEventListener('click', function() {
+    let size = getSize();
+    createGrid(size);
+})
 
 function createGrid(size) {
 
@@ -14,4 +21,16 @@ function createGrid(size) {
     }
 }
 
-createGrid(16);
+function getSize() {
+    gridContainer.innerHTML = '';
+    let inputChoice = prompt("¿De que tamaño sera la grilla?");
+
+    if (inputChoice == "") {
+        mensaje.textContent = "Por favor, introducir un numero";
+    } else if (inputChoice < 1 || inputChoice > 100) {
+        mensaje.textContent = "Introducir un numero entre 1 y 100";
+    } else {
+        mensaje.textContent = "A dibujar!";
+        return inputChoice;
+    }
+}
